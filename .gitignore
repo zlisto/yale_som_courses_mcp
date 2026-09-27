@@ -1,0 +1,8 @@
+﻿.env
+.venv/
+__pycache__/
+node_modules/
+*.zip
+*.db
+.DS_Store
+output/audit_trail.json
