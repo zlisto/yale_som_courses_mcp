@@ -1,8 +1,8 @@
 """Yale SOM course agent: PydanticAI + Portkey, tools via Yale SOM MCP only.
 
-Catalogue tools live on mcp_server.py. The agent attaches that FastMCP server
-in-process (same process as FastAPI) — no separate MCP terminal required.
-Every run is appended to output/audit_trail.json.
+Catalogue tools live in mcp/mcp_server.py. The agent attaches that FastMCP
+server in-process (same process as FastAPI) — no separate MCP terminal required
+for the chat app. Every run is appended to output/audit_trail.json.
 """
 
 from __future__ import annotations
@@ -39,8 +39,9 @@ from models import AgentResult
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+MCP_DIR = ROOT / "mcp"
+if str(MCP_DIR) not in sys.path:
+    sys.path.insert(0, str(MCP_DIR))
 
 load_dotenv(ROOT / ".env")
 load_dotenv(ROOT.parent / ".env")
