@@ -22,8 +22,8 @@
 
 **New for Lecture 9 (MCP)**
 
-- `mcp_server.py` at the project root — FastMCP tools over `data/yale_som.db`
-- Tools: `search_courses`, `get_course`, `list_courses_by_faculty`
+- `mcp_server.py` at the project root — FastMCP server the chat agent plugs into
+- Starter ships with one placeholder tool (`yo`) — you add real catalogue tools in class that read `data/yale_som.db`
 - The PydanticAI agent attaches that server with `MCPToolset` (in-process for class)
 - Local catalogue tools in `backend/tools.py` are empty — course facts come from MCP only
 
@@ -102,7 +102,7 @@ npm run dev
 
 Open **http://127.0.0.1:5173**. API docs: **http://127.0.0.1:8000/docs**.
 
-Ask the chat something like “What does MGT 409 cover?” — answers should come through MCP tools (`tools_used` in the reply / audit trail).
+After you add catalogue tools in class, ask the chat something like “What does MGT 409 cover?” — answers should come through MCP tools (`tools_used` in the reply / audit trail).
 
 ### Optional: run the MCP server alone (stdio or HTTP)
 
